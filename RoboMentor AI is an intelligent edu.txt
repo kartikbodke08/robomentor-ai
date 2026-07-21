@@ -1,0 +1,102 @@
+RoboMentor AI is an intelligent educational platform that helps students learn robotics, programming, and electronics through AI-powered tutoring, code assistance, and personalized learning tools.
+
+
+Users :- 
+
+1. Student (Primary User)
+
+This is our main focus.
+
+They can:
+
+Learn robotics concepts
+Ask questions
+Debug code
+Generate quizzes
+Study sensors
+Practice programming
+
+
+2. Teacher (Later)
+
+Teachers can:
+
+Generate lesson plans
+Create quizzes
+Prepare worksheets
+Monitor student progress
+
+
+3. Admin (Much Later)
+
+Manage:
+
+Classes
+Users
+Courses
+Content
+
+
+What Problem are we solving  :- 
+
+
+Problem 1:-Students don't understand robotics concepts.
+Solution:-AI Tutor
+
+Problem 2:-Students can't debug Arduino code.
+Solution:-Code Debugger
+
+Problem 3:-Teachers spend hours preparing quizzes.
+Solution:-Quiz Generator
+
+Problem 4:-Students can't find the right learning material.
+Solution:-Robotics Knowledge Base
+
+
+
+Problem 5:-Students make wiring mistakes.
+Future Solution:-Computer Vision
+
+Problem 6:-Teachers can't answer everyone at once.
+Future Solution:-AI Classroom Assistant Robot
+
+
+
+Version 1 :- 
+
+Home page :-
+┌────────────────────────────┐
+│        RoboMentor AI       │
+├────────────────────────────┤
+│ 💬 Ask AI                  │
+│ 💻 Debug Code              │
+│ 📚 Learn Robotics          │
+│ 📝 Generate Quiz           │
+│ 📖 Lesson Generator        │
+└────────────────────────────┘
+
+
+Core modules :- 
+
+Module 1 :- AI tutor
+Module 2 :- Code debugger
+Module 3 :- Knowledge Base
+Module 4 — Quiz Generator
+Module 5 — Lesson Generator
+
+
+Future versions :- 
+
+Version 2
+Voice interaction
+OCR
+Image uploads
+
+Version 3
+Camera detects wiring mistakes
+Circuit recognition
+Object detection
+
+Version 4
+Deploy onto a physical robot.
+Now the same AI becomes a classroom teaching assistant.
