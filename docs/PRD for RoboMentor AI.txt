@@ -1,0 +1,92 @@
+PRD :- 
+
+What problem are we solving?
+Who are our users?
+What are the MVP features?
+What features are intentionally not included yet?
+What does success look like?
+
+North Star :- "Enable every robotics learner to understand, build, and debug projects independently with the guidance of an adaptive AI mentor."
+
+
+RoboMentor AI :- Your AI Companion for Learning Robotics, Programming, and Electronics.
+
+
+Section 1 :- Product Overview 
+
+RoboMentor AI is an AI-powered educational platform designed to assist students in learning robotics, embedded systems, programming, and electronics through an interactive tutoring experience.
+The platform enables students to ask questions, understand robotics concepts, debug code, generate quizzes, and receive personalized learning guidance.
+Rather than replacing teachers, RoboMentor AI serves as a virtual teaching assistant that provides instant help, allowing students to learn independently while reducing the workload on instructors.
+The platform is initially focused on K–12 and beginner engineering students learning Arduino, ESP32, Raspberry Pi, and robotics fundamentals.
+
+Why This Product Exists :- 
+
+Students often struggle while learning robotics because they encounter problems that are difficult to solve without immediate guidance.
+Common challenges include:
+Understanding sensor behavior
+Debugging Arduino programs
+Learning electronics concepts
+Choosing appropriate components
+Finding reliable learning resources
+Teachers cannot provide instant one-on-one support to every student in a classroom.
+RoboMentor AI addresses this gap by acting as an intelligent learning assistant that provides immediate explanations, guidance, and educational content.
+
+
+Mission:-To make robotics education accessible, interactive, and personalized through AI.
+
+Vision:- RoboMentor AI is an adaptive AI-powered learning platform that helps students and educators understand robotics, electronics, embedded systems, and programming through personalized tutoring, intelligent code assistance, and interactive educational content.
+
+
+
+Section 2 :- Problem Statement :-
+
+Background
+
+Robotics and embedded systems education is becoming increasingly important in schools and engineering institutions. Students are expected to learn programming, electronics, sensors, and hardware integration through practical experiments and projects.
+However, practical learning introduces challenges that traditional classroom teaching alone cannot always address.
+
+Current Challenges:-Students often encounter multiple obstacles while working on robotics projects.
+
+1. Conceptual Understanding
+Many students struggle to understand fundamental concepts such as microcontrollers, sensors, communication protocols, PWM, interrupts, and embedded programming. Existing learning resources are often either too theoretical or too advanced for beginners.
+
+2. Programming Difficulties
+Students frequently face syntax errors, logical mistakes, and hardware-related issues in Arduino and Python programs. Most beginners cannot distinguish between programming errors and hardware problems, leading to frustration and reduced confidence.
+
+3. Fragmented Learning Resources
+To solve a single problem, students often switch between YouTube videos, blogs, forums, documentation, and online communities. This fragmented learning process increases cognitive load and slows down practical learning.
+
+4. Limited Instructor Availability
+In classroom and laboratory environments, one instructor is responsible for guiding many students simultaneously. As a result, students may wait several minutes before receiving assistance, interrupting their learning flow and reducing engagement.
+
+5. Passive Learning
+Many students rely on copying code from the internet instead of understanding the underlying concepts. This limits conceptual learning and reduces their ability to solve new problems independently.
+
+
+Problem Summary:-Current robotics education lacks an intelligent, personalized assistant that can provide immediate guidance, explain concepts at an appropriate learning level, assist with programming challenges, and encourage active learning while complementing classroom instruction.
+
+Proposed Solution:-RoboMentor AI addresses these challenges by providing an adaptive AI-powered learning platform that enables students to:
+
+Learn robotics concepts through personalized explanations.
+Debug programming mistakes with guided feedback.
+Generate lessons and quizzes tailored to their learning level.
+Build projects with structured guidance rather than simply receiving complete solutions.
+Continue learning independently without waiting for instructor assistance.
+Instead of replacing teachers, RoboMentor AI serves as an intelligent learning companion that enhances both classroom and self-paced robotics education.
+
+
+---During robotics practicals, students frequently struggle with programming concepts, hardware debugging, and finding reliable learning resources. Since instructors must support multiple students simultaneously, learners often spend more time waiting for help or searching across fragmented online resources than actually building and understanding their projects. RoboMentor AI was designed to provide immediate, personalized guidance that enables students to continue learning independently while complementing the teacher rather than replacing them.---
+
+
+Gaps that we can fill :- 
+Problem 1 — Knowledge Gap
+Problem 2 — Debugging
+Problem 3 — Learning Resources
+Problem 4 — Teacher Availability
+Problem 5 — Confidence
+
+
+
+
+chatgpt :- https://chatgpt.com/share/6a5e37e1-4904-83e8-a57f-63ec2d4b28e3
+
