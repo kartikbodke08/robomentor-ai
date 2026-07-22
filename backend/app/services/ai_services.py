@@ -22,15 +22,26 @@ class AIService:
         {question}
         """
 
-        response = self.client.models.generate_content(
-            model=GEMINI_MODEL,
-            contents=prompt,
-        )
+        try:
+            
+            response = self.client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=prompt,
+            )
+            print(response)
+        except Exception as e:
+            import traceback
+
+            print(type(e))
+            print(e)
+            traceback.print_exc()
+            raise
 
         return {
             "question": question,
             "level": level,
             "answer": response.text
         }
+
     
 ai_service = AIService()
