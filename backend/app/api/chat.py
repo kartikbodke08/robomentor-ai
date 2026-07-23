@@ -10,7 +10,8 @@ def chat(request: ChatRequest) :
     
     return ai_service.generate_response(
         question = request.question,
-        level = request.level 
+        level = request.level ,
+        history = request.history
     )
 
 

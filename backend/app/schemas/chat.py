@@ -1,10 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
-class Message(BaseModel):
+class ChatMessage(BaseModel):
     role: str
     content: str
 
 class ChatRequest(BaseModel):
     question: str
     level: str
-    history: list[Message] = []
+    history: list[ChatMessage] = Field(default_factory=list)
