@@ -1,4 +1,5 @@
 from google import genai
+import logging
 from fastapi import HTTPException
 from app.core.config import GEMINI_API_KEY, GEMINI_MODEL
 
@@ -46,7 +47,9 @@ class AIService:
 
 
         prompt = self.build_prompt(
-            question,level,history
+            question=question,
+            level=level,
+            history=history
         )
 
         try:
@@ -55,7 +58,10 @@ class AIService:
                 model=GEMINI_MODEL,
                 contents=prompt,
             )
-            print(response)
+
+            
+            logging.info(f"Gemini Response: {response.text}")
+
         except Exception as e:
             print(f"Gemini Error : {e}")
 
@@ -64,11 +70,12 @@ class AIService:
                 detail="Unable to generate AI response, Please try again later"
             )
         
+        answer = response.text if response.text else "No reponse generated"
 
         return {
             "question": question,
             "level": level,
-            "answer": response.text
+            "answer": answer
         }
 
 
