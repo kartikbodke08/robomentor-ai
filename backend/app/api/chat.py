@@ -26,7 +26,8 @@ router = APIRouter()
 def chat(request: ChatRequest, db: Session = Depends(get_db)) :
     
     return ai_service.generate_response(
-        session_id = request.session_id,
+        db = db,
+        conversation_id=request.conversation_id,
         question = request.question,
         level = request.level ,
     )

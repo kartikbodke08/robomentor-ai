@@ -23,10 +23,19 @@ class ConversationService :
             .first()
         )
 
-    def save_message(self, db:Session, conversation_id:int, role: str, content: str):
-        message = Message(conversation_id =conversation_id,
-                          role = role,
-                          content = content)
+        
+    def add_message(
+            self,
+            db:Session,
+            conversation_id:int,
+            role:str,
+            content:str
+        ) :
+        
+        message = Message(role=role,
+                          content=content,
+                          conversation_id=conversation_id
+                          )
 
         db.add(message)
         db.commit()
@@ -34,15 +43,19 @@ class ConversationService :
 
         return message
 
-    def get_message(self, db:Session, conversation_id:int):
 
-        return (db.query(Message)
-                .filter(Message.conversation_id == conversation_id)
-                .order_by(Message.id)
-                .all()
-                )
+    def get_messages(
+            self,
+            db:Session,
+            conversation_id:int,
+         ) :
         
-
+        return (
+            db.query(Message)
+            .filter(Message.conversation_id == conversation_id)
+            .order_by(Message.id)
+            .all()
+        )
     
 
 conversation_service = ConversationService()
