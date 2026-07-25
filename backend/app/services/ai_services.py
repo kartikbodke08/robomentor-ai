@@ -15,7 +15,7 @@ class AIService:
 
     def generate_response(self,session_id:str, question:str, level:str):
 
-        history = memory_service.get_history(session_id)
+        # history = memory_service.get_history(session_id)
 
         memory_service.add_message(
             session_id=session_id,
