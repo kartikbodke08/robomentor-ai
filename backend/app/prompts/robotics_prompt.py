@@ -1,7 +1,7 @@
 def build_robotics_prompt(question:str , level:str , history:list)->str:
 
         history_text = "\n".join(
-            f"{msg.role}: {msg.content}"
+            f"{msg["role"]}: {msg["content"]}"
             for msg in history
         )
 

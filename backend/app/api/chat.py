@@ -24,7 +24,6 @@ def chat(request: ChatRequest) :
         session_id = request.session_id,
         question = request.question,
         level = request.level ,
-        history = request.history
     )
 
 

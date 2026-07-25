@@ -13,14 +13,17 @@ class AIService:
         self.client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-    def generate_response(self,session_id:str, question:str, level:str, history:list):
+    def generate_response(self,session_id:str, question:str, level:str):
 
         history = memory_service.get_history(session_id)
+
         memory_service.add_message(
             session_id=session_id,
             role="user",
             content=question
         )
+
+        history = memory_service.get_history(session_id)
 
         prompt = build_robotics_prompt(
             question=question,
@@ -46,6 +49,12 @@ class AIService:
             )
         
         answer = response.text if response.text else "No reponse generated"
+
+        memory_service.add_message(
+            session_id=session_id,
+            role = "assistant",
+            content=answer
+        )
 
         return {
             "question": question,
