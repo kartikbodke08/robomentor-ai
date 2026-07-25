@@ -5,7 +5,9 @@ from app.core.config import GEMINI_API_KEY, GEMINI_MODEL
 from app.prompts.robotics_prompt import build_robotics_prompt
 from app.core.logger import logger
 
-from app.services.memory_services import memory_service
+# from app.services.memory_services import memory_service
+from sqlalchemy.orm import Session
+from app.services.conversation_service import conversation_service
 
 class AIService:
 
@@ -13,17 +15,29 @@ class AIService:
         self.client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-    def generate_response(self,session_id:str, question:str, level:str):
+    def generate_response(self, db:Session, conversation_id:int, question:str, level:str):
 
         # history = memory_service.get_history(session_id)
 
-        memory_service.add_message(
-            session_id=session_id,
-            role="user",
-            content=question
+        conversation = conversation_service.get_conversation(
+            db = db,
+            conversation_id=conversation_id
         )
 
-        history = memory_service.get_history(session_id)
+        if conversation is None :
+            raise HTTPException(
+                status_code=404,
+                detail = "Conversation not found"
+            )
+
+        conversation_service.add_message(
+            db = db,
+            conversation_id = conversation_id,
+            role = "user",
+            content = question
+        )
+
+        history = conversation_service.get_messages(db = db, conversation_id = conversation_id)
 
         prompt = build_robotics_prompt(
             question=question,
@@ -50,8 +64,9 @@ class AIService:
         
         answer = response.text if response.text else "No reponse generated"
 
-        memory_service.add_message(
-            session_id=session_id,
+        conversation_service.add_message(
+            db = db,
+            conversation_id=conversation_id,
             role = "assistant",
             content=answer
         )

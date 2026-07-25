@@ -12,7 +12,7 @@ class ChatMessage(BaseModel):
     content: str = Field(...,examples=["What is PWM"], description="Content of the conversation message")
 
 class ChatRequest(BaseModel):
-    session_id:str = Field(...,description="Unique conversation session ID")
+    conversation_id: int = Field(...,description="Conversation ID")
     question: str = Field(...,min_length=3,max_length=1000, description = "Student's robotics question", examples=["What is PWM in Arduino?"])
     level: StudentLevel
 
