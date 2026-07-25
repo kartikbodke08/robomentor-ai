@@ -5,6 +5,11 @@ from app.services.ai_services import ai_service
 
 from fastapi.responses import StreamingResponse
 
+from fastapi import Depends
+from sqlalchemy.orm import Session
+from app.core.dependencies import get_db
+
+
 router = APIRouter()
 
 @router.post("/chat", response_model=ChatResponse,
@@ -18,7 +23,7 @@ router = APIRouter()
                 """,
                 tags=["AI Chat"]
              )
-def chat(request: ChatRequest) :
+def chat(request: ChatRequest, db: Session = Depends(get_db)) :
     
     return ai_service.generate_response(
         session_id = request.session_id,
