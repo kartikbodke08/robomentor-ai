@@ -15,7 +15,6 @@ class ChatRequest(BaseModel):
     session_id:str = Field(...,description="Unique conversation session ID")
     question: str = Field(...,min_length=3,max_length=1000, description = "Student's robotics question", examples=["What is PWM in Arduino?"])
     level: StudentLevel
-    history: list[ChatMessage] = Field(default_factory=list, description="Previous conversation history")
 
 
 class ChatResponse(BaseModel) :

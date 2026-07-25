@@ -13,7 +13,7 @@ class AIService:
         self.client = genai.Client(api_key=GEMINI_API_KEY)
 
 
-    def generate_response(self,session_id:str, question:str, level:str, history:list):
+    def generate_response(self,session_id:str, question:str, level:str):
 
         history = memory_service.get_history(session_id)
 
