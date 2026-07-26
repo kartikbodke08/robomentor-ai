@@ -56,6 +56,17 @@ class ConversationService :
             .order_by(Message.id)
             .all()
         )
+
+    def get_conversation_with_messages(
+            self,
+            db:Session,
+            conversation_id: int,
+    ):
+        return (
+            db.query(Conversation)
+            .filter(Conversation.id == conversation_id)
+            .first()
+        )
     
 
 conversation_service = ConversationService()
