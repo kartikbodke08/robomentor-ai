@@ -1,9 +1,14 @@
 def build_robotics_prompt(question:str , level:str , history:list)->str:
 
+        # history_text = "\n".join(
+        #     f"{msg["role"]}: {msg["content"]}"
+        #     for msg in history
+        # )
+
         history_text = "\n".join(
-            f"{msg["role"]}: {msg["content"]}"
-            for msg in history
-        )
+                f"{msg.role}: {msg.content}"
+                for msg in history
+            )
 
         return f"""You are RoboMentor AI.
 
