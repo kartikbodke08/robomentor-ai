@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import APIRouter
 
 from app.schemas.chat import ChatRequest
 from app.services.ai_services import ai_service

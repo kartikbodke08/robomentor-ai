@@ -5,7 +5,6 @@ from app.core.config import GEMINI_API_KEY, GEMINI_MODEL
 from app.prompts.robotics_prompt import build_robotics_prompt
 from app.core.logger import logger
 
-# from app.services.memory_services import memory_service
 from sqlalchemy.orm import Session
 from app.services.conversation_service import conversation_service
 
@@ -17,7 +16,12 @@ class AIService:
 
     def generate_response(self, db:Session, conversation_id:int, question:str, level:str):
 
-        # history = memory_service.get_history(session_id)
+        if not question.strip():
+            raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Question cannot be empty."
+        )
+
 
         conversation = conversation_service.get_conversation(
             db = db,
@@ -26,7 +30,7 @@ class AIService:
 
         if conversation is None :
             raise HTTPException(
-                status_code=404,
+                status_code=status.HTTP_404_NOT_FOUND,
                 detail = "Conversation not found"
             )
 
@@ -52,10 +56,10 @@ class AIService:
             )
 
             
-            logger.info(f"Gemini Response: {response.text}")
+            logger.info(f"Gemini Response generated successfully")
 
-        except Exception:
-            logger.exception("Gemini API Error")
+        except Exception as e:
+            logger.exception(f"Gemini API Error : {e}")
 
             raise HTTPException(
                 status_code=500,
@@ -85,6 +89,13 @@ class AIService:
             question: str,
             level: str,
     ):
+        if not question.strip():
+            raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Question cannot be empty."
+        )
+
+
         conversation = conversation_service.get_conversation(
                     db = db,
                     conversation_id=conversation_id
@@ -118,8 +129,8 @@ class AIService:
                 contents = prompt,
             )
 
-        except Exception:
-            logger.exception("Gemini API Error")
+        except Exception as e:
+            logger.exception(f"Gemini API Error : {e}")
 
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
