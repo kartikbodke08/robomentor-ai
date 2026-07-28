@@ -1,6 +1,13 @@
 ./backend/.env
 ./backend/.venv
+./frontend/node_modules
 
+*.pyc 
+
+./frontend/dist
+
+.DS_Store
+Thumbs.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
